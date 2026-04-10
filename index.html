@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth w-full overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soffit & Siding Experts | Premium Metal Architectural Products</title>
+    <meta name="description" content="High-end aluminum soffit and metal siding manufacturing in Florida. 24-48h lead times, NOA approved, and surgical precision.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#c71f27',
+                        primaryHover: '#ff4d56',
+                        dark: {
+                            800: '#2A2A2A',
+                            900: '#141414',
+                            950: '#0e0e0e',
+                        },
+                        gray: {
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            800: '#1f2937',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0e0e0e; 
+            color: #d1d5db; 
+        }
+        h1, h2, h3, h4, h5, h6, .font-display { 
+            font-family: 'Space Grotesk', sans-serif; 
+        }
+        .bg-glass { 
+            background: rgba(14, 14, 14, 0.8); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid #1f2937; 
+        }
+        .form-input {
+            width: 100%;
+            background-color: #141414;
+            border: 1px solid #1f2937;
+            color: #f3f4f6;
+            padding: 0.75rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        .form-input::placeholder {
+            color: #6b7280;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #c71f27;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 0 1px #c71f27;
+        }
+        .btn-primary {
+            background-color: #c71f27;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #ff4d56;
+            box-shadow: 0 0 15px rgba(199, 31, 39, 0.4);
+        }
+        .hero-pattern {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .lang-btn {
+            cursor: pointer;
+            color: #6b7280;
+            transition: color 0.2s;
+        }
+        .lang-btn.active {
+            color: #f3f4f6;
+        }
+        /* Fix for logo super-imposed look: 
+           It applies a white background drop-shadow or blends. 
+           If the logo has white background, we might use mix-blend-mode.
+           We'll use a specific id to apply CSS drop-shadow or a filter if needed. */
+        .logo-img {
+            /* Removing solid backgrounds, blending into dark */
+            mix-blend-mode: screen; 
+            /* This will make a white background turn transparent if the logo is black/dark. 
+               Wait, if the logo is red and black, screen makes it weird. 
+               Let's rely on a transparent png instead. */
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-2">
+                <div class="flex items-center gap-3">
+                    <!-- Logo explicitly sourced to transparent version if possible, or filtered -->
+                    <img src="images/logo_dark_theme.png" onerror="this.src='images/logo.png';" alt="Soffit & Siding Experts Logo" class="h-16 md:h-24 w-auto object-contain logo-img">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#benefits" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Why Us" data-es="Por Qué Nosotros">Why Us</a>
+                    <a href="#gallery" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Projects" data-es="Proyectos">Projects</a>
+                    <a href="#locations" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Locations" data-es="Ubicaciones">Locations</a>
+                    
+                    <div class="flex gap-3 items-center text-sm font-bold border-l border-gray-700 pl-6">
+                        <button type="button" class="lang-btn active" data-lang-target="en">EN</button>
+                        <span class="text-gray-700">|</span>
+                        <button type="button" class="lang-btn" data-lang-target="es">ES</button>
+                    </div>
+
+                    <a href="#quote" class="btn-primary flex items-center justify-center rounded-sm h-10 px-6 text-sm font-bold uppercase tracking-widest translatable" data-en="Get a Quote" data-es="Cotizar">
+                        Get a Quote
+                    </a>
+                </div>
+                <!-- Mobile lang toggle -->
+                <div class="md:hidden flex gap-3 items-center text-sm font-bold">
+                    <button type="button" class="lang-btn active" data-lang-target="en">EN</button>
+                    <span class="text-gray-700">|</span>
+                    <button type="button" class="lang-btn" data-lang-target="es">ES</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center bg-dark-950">
+        <div class="absolute inset-0 hero-pattern z-0 opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-dark-950/50 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <div class="inline-flex items-center gap-2 bg-dark-900 w-fit px-4 py-2 rounded-sm border border-gray-800">
+                    <span class="material-symbols-outlined text-primary text-sm">bolt</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-300 translatable" data-en="24-48h Lead Times • Miami Supply" data-es="Producción 24-48h • Distribución Miami">24-48h Lead Times • Miami Supply</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-display font-black leading-[1.1] tracking-tighter uppercase text-white translatable" data-en="Soffit & Siding <br/><span class='text-primary'>Experts.</span>" data-es="Soffit & Siding <br/><span class='text-primary'>Experts.</span>">
+                    Soffit & Siding <br/>
+                    <span class="text-primary">Experts.</span>
+                </h1>
+                
+                <p class="text-lg text-gray-400 font-body max-w-xl leading-relaxed translatable" data-en="High-end Aluminum Soffit & Metal Siding manufacturing in Florida. Built for rapid deployment, engineered with surgical precision, and fully NOA Approved." data-es="Fabricación de Soffit de Aluminio y Metal Siding de alta gama en Florida. Producción rápida, precisión quirúrgica, completamente certificado NOA.">
+                    High-end Aluminum Soffit & Metal Siding manufacturing in Florida. 
+                    Built for rapid deployment, engineered with surgical precision, and fully NOA Approved.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-6 mt-4">
+                    <a href="#quote" class="btn-primary rounded-sm h-14 px-8 text-sm font-bold uppercase tracking-widest flex items-center justify-center translatable" data-en="Request Free Quote" data-es="Solicitar Cotización">
+                        Request Free Quote
+                    </a>
+                    <a href="#gallery" class="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white hover:text-primary transition-colors translatable" data-en="View Our Work" data-es="Ver Nuestro Trabajo">
+                        View Our Work <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- GHL Style Lead Form -->
+            <div id="quote" class="lg:col-span-5 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                <div class="bg-dark-900 border border-gray-800 p-8 rounded-md shadow-2xl relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-dark-900 rounded-t-md"></div>
+                    <h3 class="text-2xl font-display font-bold text-white uppercase tracking-tight mb-2 translatable" data-en="Get Your Quote" data-es="Cotiza Tu Proyecto">Get Your Quote</h3>
+                    <p class="text-sm text-gray-400 mb-6 font-body translatable" data-en="Fill out the form below and our team will contact you within minutes." data-es="Completa el formulario y nuestro equipo te contactará en minutos.">Fill out the form below and our team will contact you within minutes.</p>
+                    
+                    <form id="leadForm" class="space-y-4">
+                        <div>
+                            <input type="text" name="full_name" placeholder="Full Name *" required class="form-input text-sm dynamic-placeholder" data-placeholder-en="Full Name *" data-placeholder-es="Nombre Completo *">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="tel" name="phone" placeholder="Phone *" required class="form-input text-sm dynamic-placeholder" data-placeholder-en="Phone *" data-placeholder-es="Teléfono *">
+                            <input type="email" name="email" placeholder="Email *" required class="form-input text-sm dynamic-placeholder" data-placeholder-en="Email *" data-placeholder-es="Correo *">
+                        </div>
+                        <div>
+                            <select name="inquiry_type" required class="form-input text-sm appearance-none cursor-pointer">
+                                <option value="" disabled selected class="translatable-opt" data-en="I am a... *" data-es="Soy un... *">I am a... *</option>
+                                <option value="Distributor/Dealer" class="translatable-opt" data-en="Distributor / Dealer / Supply" data-es="Distribuidor / Suplidor">Distributor / Dealer / Supply</option>
+                                <option value="Contractor/Installer" class="translatable-opt" data-en="Contractor / Installer" data-es="Contratista / Instalador">Contractor / Installer</option>
+                                <option value="General" class="translatable-opt" data-en="General Inquiry" data-es="Consulta General">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select name="product_interest" required class="form-input text-sm appearance-none cursor-pointer">
+                                <option value="" disabled selected class="translatable-opt" data-en="Product Interest *" data-es="Producto de Interés *">Product Interest *</option>
+                                <option value="Aluminum Soffit">Aluminum Soffit</option>
+                                <option value="Metal Siding">Metal Siding</option>
+                                <option value="Both" class="translatable-opt" data-en="Both" data-es="Ambos">Both</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary w-full rounded-sm h-12 text-sm font-bold uppercase tracking-widest mt-4 translatable" data-en="Submit Request" data-es="Enviar Solicitud">
+                            Submit Request
+                        </button>
+                        <p class="text-[10px] text-gray-500 text-center mt-4 translatable" data-en="By submitting, you agree to being contacted by our sales team." data-es="Al enviar, aceptas ser contactado por nuestro equipo de ventas.">By submitting, you agree to being contacted by our sales team.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="benefits" class="py-24 bg-dark-900 border-t border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="h-px bg-primary w-12"></div>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-primary translatable" data-en="The Advantage" data-es="Nuestras Ventajas">The Advantage</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-dark-950 p-8 border border-gray-800 hover:border-primary/50 transition-colors duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6">local_shipping</span>
+                    <h3 class="text-xl font-display font-bold uppercase tracking-tight text-white mb-3 translatable" data-en="24-48h Lead Time" data-es="24-48h Prod.">24-48h Lead Time</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed translatable" data-en="Optimized local manufacturing processes ensure your architectural materials are ready precisely when you need them." data-es="Fabricación precisa y rápida que nos permite suministrar tus perfiles metálicos sin demoras extremas.">Optimized local manufacturing processes ensure your architectural materials are ready precisely when you need them.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-dark-950 p-8 border border-gray-800 hover:border-primary/50 transition-colors duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6">verified</span>
+                    <h3 class="text-xl font-display font-bold uppercase tracking-tight text-white mb-3 translatable" data-en="NOA Certified" data-es="Certificado NOA">NOA Certified</h3>
+                    <p class="text-gray-400 text-[13px] leading-relaxed translatable" data-en="Hurricane-Ready system. Florida Building Code compliant. Complete Miami-Dade Notice of Acceptance (NOA) for maximum wind zones." data-es="Sistema preparado contra huracanes. Cumple con el Código de Florida y posee Aprobación Miami-Dade (NOA) para zonas de vientos extremos.">Hurricane-Ready system. Florida Building Code compliant. Complete Miami-Dade Notice of Acceptance (NOA) for maximum wind zones.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-dark-950 p-8 border border-gray-800 hover:border-primary/50 transition-colors duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6">workspace_premium</span>
+                    <h3 class="text-xl font-display font-bold uppercase tracking-tight text-white mb-3 translatable" data-en="+20 Yrs Experience" data-es="+20 Años Exp.">+20 Yrs Experience</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed translatable" data-en="Two decades of industry expertise translating into flawless product quality and unwavering reliability for contractors." data-es="Dos décadas de experiencia para entregar un producto sin fisuras y soporte a contratistas inigualable.">Two decades of industry expertise translating into flawless product quality and unwavering reliability for contractors.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-dark-950 p-8 border border-gray-800 hover:border-primary/50 transition-colors duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6">precision_manufacturing</span>
+                    <h3 class="text-xl font-display font-bold uppercase tracking-tight text-white mb-3 translatable" data-en="Local Supply" data-es="Suministro Local">Local Supply</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed translatable" data-en="Proudly manufactured right here in Miami, cutting out the middlemen and reducing logistical headaches." data-es="Hecho en Miami. Eliminamos intermediarios de importación protegiéndote con un servicio al cliente real y rápido.">Proudly manufactured right here in Miami, cutting out the middlemen and reducing logistical headaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-[#111111] border-y border-[#222]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Content -->
+                <div>
+                    <div class="text-primary text-sm font-bold uppercase tracking-widest mb-4 translatable" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</div>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-white uppercase tracking-tight mb-6 translatable" data-en="Florida's Premier Local Metal Manufacturer" data-es="Principal Fabricante Local de Metales en Florida">
+                        Florida's Premier Local Metal Manufacturer
+                    </h2>
+                    <p class="text-gray-400 text-base md:text-lg mb-10 leading-relaxed translatable" data-en="With over 20 years of experience, Soffit & Siding Experts is a Miami-based direct manufacturer of high-end aluminum soffit and metal siding. By keeping our manufacturing entirely in-house, we eliminate the middleman to offer you aggressive pricing, extreme quality control, and the fastest local turnaround times." data-es="Con más de 20 años de experiencia, Soffit & Siding Experts es un fabricante directo en Miami de soffit de aluminio y siding de metal de alta gama. Al fabricar todo localmente, eliminamos intermediarios para garantizarte precios agresivos, un control de calidad extremo y los tiempos de entrega más rápidos.">
+                        With over 20 years of experience, Soffit & Siding Experts is a Miami-based direct manufacturer of high-end aluminum soffit and metal siding. By keeping our manufacturing entirely in-house, we eliminate the middleman to offer you aggressive pricing, extreme quality control, and the fastest local turnaround times.
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div class="flex gap-4">
+                            <span class="material-symbols-outlined text-4xl text-primary shrink-0">speed</span>
+                            <div>
+                                <h4 class="text-white font-display font-bold uppercase tracking-wide text-sm mb-1 translatable" data-en="Free 24-48h Delivery" data-es="Entrega Gratis en 24-48h">Free 24-48h Delivery</h4>
+                                <p class="text-[13px] text-gray-500 translatable" data-en="Unbeatable lead times delivered completely free straight to your job site." data-es="Tiempos de entrega inigualables despachados completamente gratis a tu obra.">Unbeatable lead times delivered completely free straight to your job site.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="material-symbols-outlined text-4xl text-primary shrink-0">verified_user</span>
+                            <div>
+                                <h4 class="text-white font-display font-bold uppercase tracking-wide text-sm mb-1 translatable" data-en="40/35-Year Warranties" data-es="Garantía de 40/35 Años">40/35-Year Warranties</h4>
+                                <p class="text-[13px] text-gray-500 translatable" data-en="40 years on material integrity, 35 years on extreme weather paint finish." data-es="40 años en la integridad del material, 35 años en la pintura frente a clima extremo.">40 years on material integrity, 35 years on extreme weather paint finish.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image / Stat Box -->
+                <div class="relative mt-8 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" alt="Metal Manufacturing" class="w-full aspect-[4/5] object-cover rounded-sm grayscale-[0.3] border border-[#333]">
+                    
+                    <div class="absolute -bottom-8 -left-8 bg-[#181818] border border-[#333] p-8 shadow-2xl hidden md:block">
+                        <h3 class="text-6xl font-display font-black text-white">100%</h3>
+                        <p class="text-primary text-sm font-bold uppercase tracking-widest mt-2 translatable" data-en="Manufactured<br>In Miami, FL" data-es="Fabricado en<br>Miami, FL">Manufactured<br>In Miami, FL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="gallery" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-px bg-primary w-12"></div>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-primary translatable" data-en="Visual Proof" data-es="Portafolio">Visual Proof</h2>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-display font-black leading-tight uppercase tracking-tighter text-white mb-12 translatable" data-en="Recent Transformations" data-es="Transformaciones">
+                Recent Transformations
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery 1 -->
+                <div class="group relative aspect-[4/3] bg-dark-900 border border-gray-800 overflow-hidden rounded-sm">
+                    <img src="images/project_siding_new_2.jpg" alt="Metal Siding Project" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 to-transparent flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                        <span class="bg-primary text-white text-[10px] font-bold uppercase px-3 py-1 mb-2 w-fit">Metal Siding</span>
+                    </div>
+                </div>
+                <!-- Gallery 2 -->
+                <div class="group relative aspect-[4/3] bg-dark-900 border border-gray-800 overflow-hidden rounded-sm">
+                    <img src="images/project_soffit_1.jpg" alt="Aluminum Soffit Project" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 to-transparent flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                        <span class="bg-gray-800 text-white text-[10px] font-bold uppercase px-3 py-1 mb-2 w-fit border border-gray-700">Aluminum Soffit</span>
+                    </div>
+                </div>
+                <!-- Gallery 3 -->
+                <div class="group relative aspect-[4/3] bg-dark-900 border border-gray-800 overflow-hidden rounded-sm">
+                    <img src="images/project_siding_new_3.jpg" alt="Metal Siding Project" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 to-transparent flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                        <span class="bg-primary text-white text-[10px] font-bold uppercase px-3 py-1 mb-2 w-fit">Metal Siding</span>
+                    </div>
+                </div>
+                <!-- Gallery 4 -->
+                <div class="group relative aspect-[4/3] bg-dark-900 border border-gray-800 overflow-hidden rounded-sm">
+                    <img src="images/project_soffit_2.jpg" alt="Aluminum Soffit Project" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 to-transparent flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                        <span class="bg-gray-800 text-white text-[10px] font-bold uppercase px-3 py-1 mb-2 w-fit border border-gray-700">Aluminum Soffit</span>
+                    </div>
+                </div>
+                <!-- Gallery 5 -->
+                <div class="group relative aspect-[4/3] bg-dark-900 border border-gray-800 overflow-hidden rounded-sm">
+                    <img src="images/project_siding_new_1.jpg" alt="Metal Siding Project" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 to-transparent flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                        <span class="bg-primary text-white text-[10px] font-bold uppercase px-3 py-1 mb-2 w-fit">Metal Siding</span>
+                    </div>
+                </div>
+                <!-- Gallery 6 -->
+                <div class="group relative aspect-[4/3] bg-dark-900 border border-gray-800 overflow-hidden rounded-sm">
+                    <img src="images/project_soffit_3.jpg" alt="Aluminum Soffit Project" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 to-transparent flex flex-col justify-end p-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                        <span class="bg-gray-800 text-white text-[10px] font-bold uppercase px-3 py-1 mb-2 w-fit border border-gray-700">Aluminum Soffit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Socials -->
+    <section id="locations" class="py-24 bg-dark-900 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Location Info -->
+                <div>
+                    <h2 class="text-3xl font-display font-black leading-tight uppercase tracking-tighter text-white mb-8 translatable" data-en="Where to find us" data-es="Dónde encontrarnos">
+                        Where to find us
+                    </h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-primary font-bold uppercase tracking-widest text-xs mb-2 translatable" data-en="Manufacturing Headquarters" data-es="Fabrica Principal">Manufacturing Headquarters</h4>
+                            <p class="text-white font-display text-xl mb-1">17587 Homestead Ave.</p>
+                            <p class="text-gray-400 border-l-2 border-primary pl-3 mt-2">Miami, FL 33157</p>
+                        </div>
+                        
+                        <div class="h-px bg-gray-800 w-full"></div>
+                        
+                        <div>
+                            <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4 translatable" data-en="Authorized Supplies (SRS Distribution)" data-es="Suministros Autorizados (SRS)">Authorized Supplies (SRS Distribution)</h4>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="bg-dark-950 p-4 border border-gray-800">
+                                    <h5 class="text-white font-bold text-sm mb-1">Suncoast Roofing Supply</h5>
+                                    <p class="text-gray-500 text-xs mb-2 translatable" data-en="Homestead Branch" data-es="Sucursal Homestead">Homestead Branch</p>
+                                    <p class="text-gray-300 text-sm mb-2 font-medium">1038 NW 4th St,<br/>Homestead, FL 33030</p>
+                                    <p class="text-gray-500 text-xs mt-3"><span class="text-primary">•</span> Mon-Fri: 7:00 AM - 4:30 PM</p>
+                                </div>
+                                <div class="bg-dark-950 p-4 border border-gray-800">
+                                    <h5 class="text-white font-bold text-sm mb-1">Suncoast Roofing Supply</h5>
+                                    <p class="text-gray-500 text-xs mb-2 translatable" data-en="Miami Branch" data-es="Sucursal Miami">Miami Branch</p>
+                                    <p class="text-gray-300 text-sm mb-2 font-medium">2445 NW 76th St,<br/>Miami, FL 33147</p>
+                                    <p class="text-gray-500 text-xs mt-3"><span class="text-primary">•</span> Mon-Fri: 7:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social & CTA -->
+                <div class="flex flex-col justify-center">
+                    <div class="bg-dark-950 border border-gray-800 p-10 text-center">
+                        <h3 class="text-2xl font-display font-black uppercase text-white mb-2 translatable" data-en="Join Our Network" data-es="Nuestras Redes">Join Our Network</h3>
+                        <p class="text-gray-400 text-sm mb-8 translatable" data-en="Follow our recent installations, tips, and behind-the-scenes manufacturing on social media." data-es="Sigue nuestros proyectos recientes, tips y escenas desde la fábrica.">Follow our recent installations, tips, and behind-the-scenes manufacturing on social media.</p>
+                        
+                        <div class="flex justify-center gap-4 mb-8">
+                            <a href="https://tiktok.com/@soffitandsiding" target="_blank" class="w-12 h-12 rounded-full bg-dark-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:border-primary hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                            </a>
+                            <a href="https://instagram.com/soffitandsiding" target="_blank" class="w-12 h-12 rounded-full bg-dark-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:border-primary hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                            </a>
+                            <a href="https://facebook.com/profile.php?id=61578497484103" target="_blank" class="w-12 h-12 rounded-full bg-dark-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:border-primary hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                        
+                        <a href="mailto:aperez@roofingex.com" class="btn-primary w-full inline-flex rounded-sm h-12 items-center justify-center text-sm font-bold uppercase tracking-widest translatable" data-en="Email Us" data-es="Enviar Correo">Email Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 py-8 border-t border-gray-900 text-center">
+        <p class="text-xs text-gray-500 font-bold uppercase tracking-widest translatable" data-en="© 2026 Soffit & Siding Experts. All rights reserved." data-es="© 2026 Soffit & Siding Experts. Reservados todos los derechos.">© 2026 Soffit & Siding Experts. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Language Toggle Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const targetLang = e.currentTarget.getAttribute('data-lang-target');
+                    if (!targetLang) return;
+                    
+                    // Update Active states for buttons
+                    langBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll(`[data-lang-target="${targetLang}"]`).forEach(b => b.classList.add('active'));
+
+                    document.documentElement.lang = targetLang;
+
+                    // Update standard translatable texts
+                    document.querySelectorAll('.translatable').forEach(el => {
+                        const translation = el.getAttribute(`data-${targetLang}`);
+                        if (translation) el.innerHTML = translation;
+                    });
+
+                    // Update Input Placeholders
+                    document.querySelectorAll('.dynamic-placeholder').forEach(el => {
+                        const translation = el.getAttribute(`data-placeholder-${targetLang}`);
+                        if (translation) el.setAttribute('placeholder', translation);
+                    });
+
+                    // Update Select Options
+                    document.querySelectorAll('.translatable-opt').forEach(opt => {
+                        const translation = opt.getAttribute(`data-${targetLang}`);
+                        if (translation) opt.innerHTML = translation;
+                    });
+                });
+            });
+
+            // Form Submit to GHL
+            document.getElementById('leadForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                
+                const isES = document.documentElement.lang === 'es';
+                btn.innerHTML = isES ? 'Enviando...' : 'Sending...';
+                btn.disabled = true;
+
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                data.source = 'Landing Page';
+
+                try {
+                    const response = await fetch('https://services.leadconnectorhq.com/hooks/PnUsStFdhbze9mWIBfhg/webhook-trigger/Ty8Wkot9sRfwaclmNRdW', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(data)
+                    });
+                    
+                    if(response.ok) {
+                        const title = isES ? '¡Gracias!' : 'Thank you!';
+                        const msg = isES ? 'Su solicitud fue recibida. Nuestro equipo lo contactará.' : 'Your request has been received. Our team will contact you.';
+                        this.innerHTML = `<div class="bg-dark-950 border border-primary text-white p-6 text-center rounded-sm"><span class="material-symbols-outlined text-4xl text-primary mb-2">check_circle</span><h3 class="font-display font-bold text-xl uppercase mb-2">${title}</h3><p class="text-sm text-gray-400">${msg}</p></div>`;
+                    } else {
+                        alert(isES ? 'Error de comunicación. Intente nuevamente.' : 'There was an error communicating with the server. Please try again.');
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }
+                } catch (err) {
+                    alert(isES ? 'Error de red. Intente nuevamente.' : 'There was a network error. Please try again.');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
