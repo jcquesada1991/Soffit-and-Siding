@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth w-full overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Soffit & Siding Experts</title>
+    <link rel="icon" type="image/png" href="images/logo_transparent.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#c71f27',
+                        primaryHover: '#ff4d56',
+                        dark: {
+                            800: '#2A2A2A',
+                            900: '#141414',
+                            950: '#0e0e0e',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0e0e0e; 
+            color: #d1d5db; 
+        }
+        h1, h2, h3, h4, h5, h6, .font-display { 
+            font-family: 'Space Grotesk', sans-serif; 
+        }
+        .bg-glass { 
+            background: rgba(14, 14, 14, 0.8); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid #1f2937; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-2">
+                <div class="flex items-center gap-3">
+                    <img src="images/logo_dark_theme.png" onerror="this.src='images/logo.png';" alt="Soffit & Siding Experts Logo" class="h-16 md:h-24 w-auto object-contain">
+                </div>
+                <div class="flex gap-4">
+                    <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="min-h-[70vh] flex flex-col items-center justify-center pt-32 px-4 text-center">
+        <div class="max-w-2xl">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-8 border border-primary/20">
+                <span class="material-symbols-outlined text-5xl text-primary">check_circle</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-display font-black text-white uppercase tracking-tight mb-4 translatable" data-en="THANK YOU!" data-es="¡GRACIAS!">
+                THANK YOU!
+            </h1>
+            
+            <p class="text-xl text-gray-400 font-body mb-10 translatable" data-en="Your request has been received. Our team will contact you." data-es="Su solicitud fue recibida. Nuestro equipo lo contactará.">
+                Your request has been received. Our team will contact you.
+            </p>
+            
+            <a href="index.html" class="inline-flex items-center justify-center bg-primary hover:bg-primaryHover text-white px-8 h-14 rounded-sm font-bold uppercase tracking-widest transition-all shadow-lg translatable" data-en="Come back home" data-es="Volver al inicio">
+                Come back home
+            </a>
+        </div>
+    </section>
+
+    <!-- The Supplies Section (from index.html) -->
+    <section class="py-24 bg-dark-900 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-display font-black text-white uppercase tracking-tighter mb-4 translatable" data-en="Our Supply Network" data-es="Nuestra Red de Suministros">
+                    Our Supply Network
+                </h2>
+                <p class="text-gray-400 translatable" data-en="Pick up our premium products at these authorized locations." data-es="Recoge nuestros productos premium en estas ubicaciones autorizadas.">
+                    Pick up our premium products at these authorized locations.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- HQ -->
+                <div class="bg-dark-950 p-6 border border-gray-800">
+                    <h4 class="text-primary font-bold uppercase tracking-widest text-xs mb-4 translatable" data-en="Manufacturing HQ" data-es="Fábrica Principal">Manufacturing HQ</h4>
+                    <p class="text-white font-display text-xl mb-1">17587 Homestead Ave.</p>
+                    <p class="text-gray-400">Miami, FL 33157</p>
+                </div>
+                <!-- Homestead -->
+                <div class="bg-dark-950 p-6 border border-gray-800">
+                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4 translatable" data-en="Suncoast Roofing Supply" data-es="Suncoast Roofing Supply">Suncoast Roofing Supply</h4>
+                    <p class="text-gray-500 text-xs mb-2 translatable" data-en="Homestead Branch" data-es="Sucursal Homestead">Homestead Branch</p>
+                    <p class="text-white font-display text-lg mb-1">1038 NW 4th St,</p>
+                    <p class="text-gray-400">Homestead, FL 33030</p>
+                </div>
+                <!-- Miami -->
+                <div class="bg-dark-950 p-6 border border-gray-800">
+                    <h4 class="text-gray-500 font-bold uppercase tracking-widest text-xs mb-4 translatable" data-en="Suncoast Roofing Supply" data-es="Suncoast Roofing Supply">Suncoast Roofing Supply</h4>
+                    <p class="text-gray-500 text-xs mb-2 translatable" data-en="Miami Branch" data-es="Sucursal Miami">Miami Branch</p>
+                    <p class="text-white font-display text-lg mb-1">2445 NW 76th St,</p>
+                    <p class="text-gray-400">Miami, FL 33147</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 py-8 border-t border-gray-900 text-center">
+        <p class="text-xs text-gray-500 font-bold uppercase tracking-widest translatable" data-en="© 2026 Soffit & Siding Experts. All rights reserved." data-es="© 2026 Soffit & Siding Experts. Reservados todos los derechos.">© 2026 Soffit & Siding Experts. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Language sub-script
+        document.addEventListener('DOMContentLoaded', () => {
+            const updateTexts = (lang) => {
+                document.documentElement.lang = lang;
+                document.querySelectorAll('.translatable').forEach(el => {
+                    const translation = el.getAttribute(`data-${lang}`);
+                    if (translation) el.innerHTML = translation;
+                });
+            };
+
+            // Detect initial lang (sync with index if possible or default to EN)
+            updateTexts('en');
+        });
+    </script>
+</body>
+</html>

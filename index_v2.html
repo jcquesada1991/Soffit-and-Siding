@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soffit & Siding Experts | Version 2</title>
+    <link rel="canonical" href="https://soffitandsidingmiami.com/">
+    <link rel="icon" type="image/png" href="images/logo_transparent.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -256,6 +258,9 @@
                                 <option value="Both" class="translatable-opt" data-en="Both" data-es="Ambos">Both</option>
                             </select>
                         </div>
+                        <div>
+                            <textarea name="message" placeholder="Message (Optional)" class="form-input text-sm dynamic-placeholder" data-placeholder-en="Message (Optional)" data-placeholder-es="Mensaje (Opcional)" rows="3"></textarea>
+                        </div>
                         <button type="submit" class="btn-primary w-full rounded-sm h-14 text-sm font-bold uppercase tracking-widest mt-6">
                             <span class="translatable" data-en="Submit Request" data-es="Enviar Solicitud">Submit Request</span>
                         </button>
@@ -376,9 +381,7 @@
                     });
                     
                     if(response.ok) {
-                        const title = isES ? '¡Gracias!' : 'Thank you!';
-                        const msg = isES ? 'Su solicitud fue recibida. Nuestro equipo lo contactará.' : 'Your request has been received. Our team will contact you.';
-                        this.innerHTML = `<div class="bg-[#111] border border-primary text-white p-6 text-center rounded-sm"><span class="material-symbols-outlined text-4xl text-primary mb-2">check_circle</span><h3 class="font-display font-bold text-xl uppercase mb-2">${title}</h3><p class="text-sm text-brand-gray">${msg}</p></div>`;
+                        window.location.href = 'thanks.html';
                     } else {
                         alert(isES ? 'Error de comunicación. Intente nuevamente.' : 'There was an error communicating with the server. Please try again.');
                         btn.innerHTML = originalText;

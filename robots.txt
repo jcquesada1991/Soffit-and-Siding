@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soffitandsidingmiami.com/sitemap.xml
