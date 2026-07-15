@@ -165,14 +165,27 @@
                         Get a Quote
                     </a>
                 </div>
-                <!-- Mobile lang toggle -->
-                <div class="md:hidden flex gap-3 items-center text-sm font-bold">
-                    <a href="https://dealers.soffitandsidingmiami.com" target="_blank" rel="noopener" class="text-primary uppercase tracking-wide translatable" data-en="Portal" data-es="Portal">Portal</a>
-                    <span class="text-gray-700">|</span>
-                    <button type="button" class="lang-btn active" data-lang-target="en">EN</button>
-                    <span class="text-gray-700">|</span>
-                    <button type="button" class="lang-btn" data-lang-target="es">ES</button>
+                <!-- Mobile controls: single language toggle + hamburger -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button type="button" id="langToggle" aria-label="Switch language" class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-gray-200 border border-gray-700 rounded-sm px-2.5 py-2 hover:border-primary transition-colors">
+                        <span class="material-symbols-outlined text-base leading-none">language</span>
+                        <span id="langToggleLabel">EN</span>
+                    </button>
+                    <button type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false" class="flex items-center justify-center text-white w-10 h-10 border border-gray-700 rounded-sm hover:border-primary transition-colors">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile dropdown menu -->
+        <div id="mobileMenu" class="md:hidden hidden absolute top-full left-0 w-full bg-dark-950 border-t border-gray-800 shadow-2xl">
+            <div class="flex flex-col px-4 py-4">
+                <a href="#benefits" class="py-3.5 px-2 text-sm font-bold uppercase tracking-widest text-gray-200 hover:text-primary border-b border-gray-800/60 transition-colors translatable" data-en="Why Us" data-es="Por Qué Nosotros">Why Us</a>
+                <a href="#resources" class="py-3.5 px-2 text-sm font-bold uppercase tracking-widest text-gray-200 hover:text-primary border-b border-gray-800/60 transition-colors translatable" data-en="Resources" data-es="Recursos">Resources</a>
+                <a href="#gallery" class="py-3.5 px-2 text-sm font-bold uppercase tracking-widest text-gray-200 hover:text-primary border-b border-gray-800/60 transition-colors translatable" data-en="Projects" data-es="Proyectos">Projects</a>
+                <a href="#locations" class="py-3.5 px-2 text-sm font-bold uppercase tracking-widest text-gray-200 hover:text-primary border-b border-gray-800/60 transition-colors translatable" data-en="Locations" data-es="Ubicaciones">Locations</a>
+                <a href="https://dealers.soffitandsidingmiami.com" target="_blank" rel="noopener" class="py-3.5 px-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-white transition-colors translatable" data-en="Dealer Portal" data-es="Portal de Dealers">Dealer Portal</a>
+                <a href="#quote" class="btn-primary text-center rounded-sm h-12 flex items-center justify-center text-sm font-bold uppercase tracking-widest mt-4 translatable" data-en="Get a Quote" data-es="Cotizar">Get a Quote</a>
             </div>
         </div>
     </nav>
@@ -568,38 +581,70 @@
     <script>
         // Language Toggle Script
         document.addEventListener('DOMContentLoaded', () => {
-            const langBtns = document.querySelectorAll('.lang-btn');
-            
-            langBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const targetLang = e.currentTarget.getAttribute('data-lang-target');
-                    if (!targetLang) return;
-                    
-                    // Update Active states for buttons
-                    langBtns.forEach(b => b.classList.remove('active'));
-                    document.querySelectorAll(`[data-lang-target="${targetLang}"]`).forEach(b => b.classList.add('active'));
+            // Language switch — shared by desktop buttons + mobile single toggle
+            function setLanguage(targetLang) {
+                document.documentElement.lang = targetLang;
 
-                    document.documentElement.lang = targetLang;
+                // Update Active states for desktop buttons
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang-target') === targetLang));
 
-                    // Update standard translatable texts
-                    document.querySelectorAll('.translatable').forEach(el => {
-                        const translation = el.getAttribute(`data-${targetLang}`);
-                        if (translation) el.innerHTML = translation;
-                    });
+                // Update standard translatable texts
+                document.querySelectorAll('.translatable').forEach(el => {
+                    const translation = el.getAttribute(`data-${targetLang}`);
+                    if (translation) el.innerHTML = translation;
+                });
 
-                    // Update Input Placeholders
-                    document.querySelectorAll('.dynamic-placeholder').forEach(el => {
-                        const translation = el.getAttribute(`data-placeholder-${targetLang}`);
-                        if (translation) el.setAttribute('placeholder', translation);
-                    });
+                // Update Input Placeholders
+                document.querySelectorAll('.dynamic-placeholder').forEach(el => {
+                    const translation = el.getAttribute(`data-placeholder-${targetLang}`);
+                    if (translation) el.setAttribute('placeholder', translation);
+                });
 
-                    // Update Select Options
-                    document.querySelectorAll('.translatable-opt').forEach(opt => {
-                        const translation = opt.getAttribute(`data-${targetLang}`);
-                        if (translation) opt.innerHTML = translation;
-                    });
+                // Update Select Options
+                document.querySelectorAll('.translatable-opt').forEach(opt => {
+                    const translation = opt.getAttribute(`data-${targetLang}`);
+                    if (translation) opt.innerHTML = translation;
+                });
+
+                // Update mobile toggle label to reflect the current language
+                const lbl = document.getElementById('langToggleLabel');
+                if (lbl) lbl.textContent = targetLang.toUpperCase();
+            }
+
+            // Desktop EN | ES buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const t = btn.getAttribute('data-lang-target');
+                    if (t) setLanguage(t);
                 });
             });
+
+            // Mobile single toggle: tap to switch to the other language
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    const cur = document.documentElement.lang === 'es' ? 'es' : 'en';
+                    setLanguage(cur === 'es' ? 'en' : 'es');
+                });
+            }
+
+            // Mobile hamburger menu
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (menuBtn && mobileMenu) {
+                const icon = menuBtn.querySelector('.material-symbols-outlined');
+                const closeMenu = () => {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    if (icon) icon.textContent = 'menu';
+                };
+                menuBtn.addEventListener('click', () => {
+                    const isOpen = mobileMenu.classList.toggle('hidden') === false;
+                    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (icon) icon.textContent = isOpen ? 'close' : 'menu';
+                });
+                mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+            }
 
             // Form Submit to GHL
             document.getElementById('leadForm').addEventListener('submit', async function(e) {
