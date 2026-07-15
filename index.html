@@ -63,10 +63,12 @@
     </script>
     
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #0e0e0e; 
-            color: #d1d5db; 
+        /* Offset anchor jumps so section titles clear the fixed navbar (tall logo) */
+        html { scroll-padding-top: 8.5rem; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e0e;
+            color: #d1d5db;
         }
         h1, h2, h3, h4, h5, h6, .font-display { 
             font-family: 'Space Grotesk', sans-serif; 
@@ -148,6 +150,7 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#benefits" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Why Us" data-es="Por Qué Nosotros">Why Us</a>
+                    <a href="#resources" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Resources" data-es="Recursos">Resources</a>
                     <a href="#gallery" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Projects" data-es="Proyectos">Projects</a>
                     <a href="#locations" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Locations" data-es="Ubicaciones">Locations</a>
                     <a href="https://dealers.soffitandsidingmiami.com" target="_blank" rel="noopener" class="text-sm font-bold uppercase tracking-widest text-primary hover:text-white transition-colors translatable" data-en="Dealer Portal" data-es="Portal de Dealers">Dealer Portal</a>
@@ -270,7 +273,8 @@
                 <div class="bg-dark-950 p-8 border border-gray-800 hover:border-primary/50 transition-colors duration-300">
                     <span class="material-symbols-outlined text-4xl text-primary mb-6">verified</span>
                     <h3 class="text-xl font-display font-bold uppercase tracking-tight text-white mb-3 translatable" data-en="NOA Certified" data-es="Certificado NOA">NOA Certified</h3>
-                    <p class="text-gray-400 text-[13px] leading-relaxed translatable" data-en="Hurricane-Ready system. Florida Building Code compliant. Complete Miami-Dade Notice of Acceptance (NOA) for maximum wind zones." data-es="Sistema preparado contra huracanes. Cumple con el Código de Florida y posee Aprobación Miami-Dade (NOA) para zonas de vientos extremos.">Hurricane-Ready system. Florida Building Code compliant. Complete Miami-Dade Notice of Acceptance (NOA) for maximum wind zones.</p>
+                    <p class="text-gray-400 text-[13px] leading-relaxed mb-4 translatable" data-en="Hurricane-Ready system. Florida Building Code compliant. Complete Miami-Dade Notice of Acceptance (NOA) for maximum wind zones." data-es="Sistema preparado contra huracanes. Cumple con el Código de Florida y posee Aprobación Miami-Dade (NOA) para zonas de vientos extremos.">Hurricane-Ready system. Florida Building Code compliant. Complete Miami-Dade Notice of Acceptance (NOA) for maximum wind zones.</p>
+                    <a href="#resources" class="inline-flex items-center gap-1 text-primary text-xs font-bold uppercase tracking-widest hover:text-primaryHover transition-colors translatable" data-en="View NOA <span class='material-symbols-outlined text-sm'>arrow_downward</span>" data-es="Ver NOA <span class='material-symbols-outlined text-sm'>arrow_downward</span>">View NOA <span class="material-symbols-outlined text-sm">arrow_downward</span></a>
                 </div>
                 <!-- Card 3 -->
                 <div class="bg-dark-950 p-8 border border-gray-800 hover:border-primary/50 transition-colors duration-300">
@@ -284,6 +288,107 @@
                     <h3 class="text-xl font-display font-bold uppercase tracking-tight text-white mb-3 translatable" data-en="Local Supply" data-es="Suministro Local">Local Supply</h3>
                     <p class="text-gray-400 text-sm leading-relaxed translatable" data-en="Proudly manufactured right here in Miami, cutting out the middlemen and reducing logistical headaches." data-es="Hecho en Miami. Eliminamos intermediarios de importación protegiéndote con un servicio al cliente real y rápido.">Proudly manufactured right here in Miami, cutting out the middlemen and reducing logistical headaches.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources / Product Approvals & Documentation -->
+    <section id="resources" class="py-24 bg-dark-950 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-px bg-primary w-12"></div>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-primary translatable" data-en="Approvals & Documentation" data-es="Aprobaciones y Documentación">Approvals &amp; Documentation</h2>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-display font-black leading-tight uppercase tracking-tighter text-white mb-4 translatable" data-en="NOA-Approved. Fully Documented." data-es="Certificado NOA. Totalmente Documentado.">
+                NOA-Approved. Fully Documented.
+            </h2>
+            <p class="text-gray-400 text-base md:text-lg max-w-3xl leading-relaxed mb-14 translatable" data-en="Every product we manufacture carries an active Miami-Dade County Notice of Acceptance (NOA) for High-Velocity Hurricane Zones. Download the official approvals and step-by-step installation guides below." data-es="Cada producto que fabricamos cuenta con una Aprobación (NOA) vigente del Condado de Miami-Dade para Zonas de Vientos Huracanados de Alta Velocidad. Descarga las aprobaciones oficiales y las guías de instalación paso a paso.">
+                Every product we manufacture carries an active Miami-Dade County Notice of Acceptance (NOA) for High-Velocity Hurricane Zones. Download the official approvals and step-by-step installation guides below.
+            </p>
+
+            <!-- Product Document Cards -->
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Card: Aluminum Soffit -->
+                <div class="bg-dark-900 border border-gray-800 rounded-md overflow-hidden flex flex-col hover:border-primary/50 transition-colors duration-300">
+                    <div class="p-8 border-b border-gray-800 flex items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="material-symbols-outlined text-3xl text-primary">grid_view</span>
+                                <h3 class="text-2xl font-display font-bold uppercase tracking-tight text-white">Aluminum Soffit</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm translatable" data-en="Vented & solid architectural aluminum soffit systems." data-es="Sistemas de soffit de aluminio arquitectónico, ventilado y sólido.">Vented &amp; solid architectural aluminum soffit systems.</p>
+                        </div>
+                        <span class="shrink-0 inline-flex items-center gap-1.5 bg-primary/10 border border-primary/40 text-primary text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm">
+                            <span class="material-symbols-outlined text-sm">verified</span>
+                            <span class="translatable" data-en="NOA Approved" data-es="NOA Vigente">NOA Approved</span>
+                        </span>
+                    </div>
+                    <div class="p-4 flex flex-col gap-3 flex-1">
+                        <!-- NOA download -->
+                        <a href="docs/soffit-aluminum-noa-23-1208.15.pdf" target="_blank" rel="noopener" class="group flex items-center gap-4 bg-dark-950 border border-gray-800 hover:border-primary p-4 rounded-sm transition-colors">
+                            <span class="material-symbols-outlined text-3xl text-primary shrink-0">description</span>
+                            <span class="flex-1 min-w-0">
+                                <span class="block text-white font-bold text-sm uppercase tracking-wide translatable" data-en="Miami-Dade NOA" data-es="NOA Miami-Dade">Miami-Dade NOA</span>
+                                <span class="block text-gray-500 text-xs mt-0.5">PDF · 1.9 MB · No. 23-1208.15</span>
+                            </span>
+                            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors shrink-0">download</span>
+                        </a>
+                        <!-- Installation download -->
+                        <a href="docs/soffit-aluminum-installation-instructions.pdf" target="_blank" rel="noopener" class="group flex items-center gap-4 bg-dark-950 border border-gray-800 hover:border-primary p-4 rounded-sm transition-colors">
+                            <span class="material-symbols-outlined text-3xl text-primary shrink-0">construction</span>
+                            <span class="flex-1 min-w-0">
+                                <span class="block text-white font-bold text-sm uppercase tracking-wide translatable" data-en="Installation Guide" data-es="Guía de Instalación">Installation Guide</span>
+                                <span class="block text-gray-500 text-xs mt-0.5 translatable" data-en="PDF · Step-by-step instructions" data-es="PDF · Instrucciones paso a paso">PDF · Step-by-step instructions</span>
+                            </span>
+                            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors shrink-0">download</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card: Metal Siding -->
+                <div class="bg-dark-900 border border-gray-800 rounded-md overflow-hidden flex flex-col hover:border-primary/50 transition-colors duration-300">
+                    <div class="p-8 border-b border-gray-800 flex items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="material-symbols-outlined text-3xl text-primary">view_column</span>
+                                <h3 class="text-2xl font-display font-bold uppercase tracking-tight text-white">Metal Siding</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm translatable" data-en="24 Ga Galvalume steel siding for extreme weather." data-es="Siding de acero Galvalume calibre 24 para clima extremo.">24 Ga Galvalume steel siding for extreme weather.</p>
+                        </div>
+                        <span class="shrink-0 inline-flex items-center gap-1.5 bg-primary/10 border border-primary/40 text-primary text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm">
+                            <span class="material-symbols-outlined text-sm">verified</span>
+                            <span class="translatable" data-en="NOA Approved" data-es="NOA Vigente">NOA Approved</span>
+                        </span>
+                    </div>
+                    <div class="p-4 flex flex-col gap-3 flex-1">
+                        <!-- NOA download -->
+                        <a href="docs/metal-siding-galvalume-noa-25-0319.07.pdf" target="_blank" rel="noopener" class="group flex items-center gap-4 bg-dark-950 border border-gray-800 hover:border-primary p-4 rounded-sm transition-colors">
+                            <span class="material-symbols-outlined text-3xl text-primary shrink-0">description</span>
+                            <span class="flex-1 min-w-0">
+                                <span class="block text-white font-bold text-sm uppercase tracking-wide translatable" data-en="Miami-Dade NOA" data-es="NOA Miami-Dade">Miami-Dade NOA</span>
+                                <span class="block text-gray-500 text-xs mt-0.5">PDF · 1.1 MB · No. 25-0319.07</span>
+                            </span>
+                            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors shrink-0">download</span>
+                        </a>
+                        <!-- Installation download -->
+                        <a href="docs/metal-siding-installation-instructions.pdf" target="_blank" rel="noopener" class="group flex items-center gap-4 bg-dark-950 border border-gray-800 hover:border-primary p-4 rounded-sm transition-colors">
+                            <span class="material-symbols-outlined text-3xl text-primary shrink-0">construction</span>
+                            <span class="flex-1 min-w-0">
+                                <span class="block text-white font-bold text-sm uppercase tracking-wide translatable" data-en="Installation Guide" data-es="Guía de Instalación">Installation Guide</span>
+                                <span class="block text-gray-500 text-xs mt-0.5 translatable" data-en="PDF · Step-by-step instructions" data-es="PDF · Instrucciones paso a paso">PDF · Step-by-step instructions</span>
+                            </span>
+                            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors shrink-0">download</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust footnote -->
+            <div class="mt-8 flex items-start gap-3 text-gray-500 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg shrink-0">shield</span>
+                <p class="translatable" data-en="All approvals reflect active Miami-Dade County Notice of Acceptance certifications, compliant with the Florida Building Code for High-Velocity Hurricane Zones (HVHZ). Need a specific spec sheet or an older NOA revision? Contact our team." data-es="Todas las aprobaciones corresponden a certificaciones NOA vigentes del Condado de Miami-Dade, en cumplimiento con el Código de Construcción de Florida para Zonas de Vientos Huracanados de Alta Velocidad (HVHZ). ¿Necesitas una ficha técnica específica o una revisión anterior del NOA? Contáctanos.">All approvals reflect active Miami-Dade County Notice of Acceptance certifications, compliant with the Florida Building Code for High-Velocity Hurricane Zones (HVHZ). Need a specific spec sheet or an older NOA revision? Contact our team.</p>
             </div>
         </div>
     </section>
@@ -306,8 +411,8 @@
                         <div class="flex gap-4">
                             <span class="material-symbols-outlined text-4xl text-primary shrink-0">speed</span>
                             <div>
-                                <h4 class="text-white font-display font-bold uppercase tracking-wide text-sm mb-1 translatable" data-en="Free 24-48h Delivery" data-es="Entrega Gratis en 24-48h">Free 24-48h Delivery</h4>
-                                <p class="text-[13px] text-gray-500 translatable" data-en="Unbeatable lead times delivered completely free straight to your job site." data-es="Tiempos de entrega inigualables despachados completamente gratis a tu obra.">Unbeatable lead times delivered completely free straight to your job site.</p>
+                                <h4 class="text-white font-display font-bold uppercase tracking-wide text-sm mb-1 translatable" data-en="24-48h Delivery" data-es="Entrega en 24-48h">24-48h Delivery</h4>
+                                <p class="text-[13px] text-gray-500 translatable" data-en="Unbeatable lead times delivered straight to your job site anywhere in Florida." data-es="Tiempos de entrega inigualables despachados directo a tu obra en toda Florida.">Unbeatable lead times delivered straight to your job site anywhere in Florida.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
