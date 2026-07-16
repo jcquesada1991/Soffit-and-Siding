@@ -155,10 +155,11 @@
                     <a href="#locations" class="text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors translatable" data-en="Locations" data-es="Ubicaciones">Locations</a>
                     <a href="https://dealers.soffitandsidingmiami.com" target="_blank" rel="noopener" class="text-sm font-bold uppercase tracking-widest text-primary hover:text-white transition-colors translatable" data-en="Dealer Portal" data-es="Portal de Dealers">Dealer Portal</a>
 
-                    <div class="flex gap-3 items-center text-sm font-bold border-l border-gray-700 pl-6">
-                        <button type="button" class="lang-btn active" data-lang-target="en">EN</button>
-                        <span class="text-gray-700">|</span>
-                        <button type="button" class="lang-btn" data-lang-target="es">ES</button>
+                    <div class="border-l border-gray-700 pl-6">
+                        <button type="button" class="lang-toggle flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-gray-200 border border-gray-700 rounded-sm px-3 py-2 hover:border-primary transition-colors" aria-label="Switch language">
+                            <span class="material-symbols-outlined text-base leading-none">language</span>
+                            <span class="langToggleLabel">EN</span>
+                        </button>
                     </div>
 
                     <a href="#quote" class="btn-primary flex items-center justify-center rounded-sm h-10 px-6 text-sm font-bold uppercase tracking-widest translatable" data-en="Get a Quote" data-es="Cotizar">
@@ -167,9 +168,9 @@
                 </div>
                 <!-- Mobile controls: single language toggle + hamburger -->
                 <div class="md:hidden flex items-center gap-2">
-                    <button type="button" id="langToggle" aria-label="Switch language" class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-gray-200 border border-gray-700 rounded-sm px-2.5 py-2 hover:border-primary transition-colors">
+                    <button type="button" aria-label="Switch language" class="lang-toggle flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-gray-200 border border-gray-700 rounded-sm px-2.5 py-2 hover:border-primary transition-colors">
                         <span class="material-symbols-outlined text-base leading-none">language</span>
-                        <span id="langToggleLabel">EN</span>
+                        <span class="langToggleLabel">EN</span>
                     </button>
                     <button type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false" class="flex items-center justify-center text-white w-10 h-10 border border-gray-700 rounded-sm hover:border-primary transition-colors">
                         <span class="material-symbols-outlined">menu</span>
@@ -581,12 +582,9 @@
     <script>
         // Language Toggle Script
         document.addEventListener('DOMContentLoaded', () => {
-            // Language switch — shared by desktop buttons + mobile single toggle
+            // Language switch — shared by desktop + mobile single toggle (🌐)
             function setLanguage(targetLang) {
                 document.documentElement.lang = targetLang;
-
-                // Update Active states for desktop buttons
-                document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang-target') === targetLang));
 
                 // Update standard translatable texts
                 document.querySelectorAll('.translatable').forEach(el => {
@@ -606,27 +604,17 @@
                     if (translation) opt.innerHTML = translation;
                 });
 
-                // Update mobile toggle label to reflect the current language
-                const lbl = document.getElementById('langToggleLabel');
-                if (lbl) lbl.textContent = targetLang.toUpperCase();
+                // Update every toggle label (desktop + mobile) to the current language
+                document.querySelectorAll('.langToggleLabel').forEach(l => l.textContent = targetLang.toUpperCase());
             }
 
-            // Desktop EN | ES buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Single-toggle buttons (desktop + mobile): tap to switch to the other language
+            document.querySelectorAll('.lang-toggle').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const t = btn.getAttribute('data-lang-target');
-                    if (t) setLanguage(t);
-                });
-            });
-
-            // Mobile single toggle: tap to switch to the other language
-            const langToggle = document.getElementById('langToggle');
-            if (langToggle) {
-                langToggle.addEventListener('click', () => {
                     const cur = document.documentElement.lang === 'es' ? 'es' : 'en';
                     setLanguage(cur === 'es' ? 'en' : 'es');
                 });
-            }
+            });
 
             // Mobile hamburger menu
             const menuBtn = document.getElementById('menuBtn');
